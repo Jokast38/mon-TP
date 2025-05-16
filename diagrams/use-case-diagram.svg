@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect x="100" y="50" width="600" height="500" rx="10" ry="10" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+  <text x="400" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Cas d'Utilisation - Système de Billetterie</text>
+  
+  <!-- Actors -->
+  <circle cx="120" cy="150" r="30" fill="#fff" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="180" x2="120" y2="240" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="200" x2="90" y2="220" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="200" x2="150" y2="220" stroke="#000" stroke-width="2"/>
+  <text x="120" y="270" font-family="Arial" font-size="14" text-anchor="middle">Client</text>
+  
+  <circle cx="120" cy="400" r="30" fill="#fff" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="430" x2="120" y2="490" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="450" x2="90" y2="470" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="450" x2="150" y2="470" stroke="#000" stroke-width="2"/>
+  <text x="120" y="520" font-family="Arial" font-size="14" text-anchor="middle">Administrateur</text>
+  
+  <!-- System boundary -->
+  <rect x="200" y="80" width="450" height="440" rx="10" ry="10" fill="#fff" stroke="#666" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="425" y="100" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Système de Billetterie</text>
+  
+  <!-- Use Cases -->
+  <ellipse cx="400" cy="150" rx="120" ry="40" fill="#e6f7ff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="155" font-family="Arial" font-size="14" text-anchor="middle">Consulter les événements</text>
+  
+  <ellipse cx="400" cy="240" rx="120" ry="40" fill="#e6f7ff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="245" font-family="Arial" font-size="14" text-anchor="middle">Réserver des billets</text>
+  
+  <ellipse cx="400" cy="330" rx="120" ry="40" fill="#e6f7ff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="335" font-family="Arial" font-size="14" text-anchor="middle">Annuler une réservation</text>
+  
+  <ellipse cx="400" cy="420" rx="120" ry="40" fill="#e6f7ff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="425" font-family="Arial" font-size="14" text-anchor="middle">Gérer les événements</text>
+  
+  <ellipse cx="400" cy="510" rx="120" ry="40" fill="#e6f7ff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="515" font-family="Arial" font-size="14" text-anchor="middle">Générer des rapports</text>
+  
+  <!-- Relationships -->
+  <line x1="150" y1="150" x2="280" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="150" y1="160" x2="280" y2="230" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="150" y1="170" x2="280" y2="320" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <line x1="150" y1="400" x2="280" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="150" y1="410" x2="280" y2="420" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="150" y1="420" x2="280" y2="510" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Include relationships -->
+  <line x1="520" y1="240" x2="580" y2="200" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <ellipse cx="620" cy="180" rx="80" ry="30" fill="#ffe6e6" stroke="#333" stroke-width="2"/>
+  <text x="620" y="185" font-family="Arial" font-size="12" text-anchor="middle">Paiement</text>
+  <text x="550" y="230" font-family="Arial" font-size="12" text-anchor="middle"><<include>></text>
+</svg>

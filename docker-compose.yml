@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: event_reservation
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ''
+    ports:
+      - "3307:3306" # Match the port used in app.py
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mariadb
+    environment:
+      FLASK_ENV: development
+      MYSQL_HOST: mariadb
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ''
+      MYSQL_DB: event_reservation
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+volumes:
+  mariadb_data:
+    driver: local
